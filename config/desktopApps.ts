@@ -1,9 +1,9 @@
 import type { DesktopAppDefinition } from "@/types/app";
 import { AboutApp } from "@/windows/About/AboutApp";
+import { PhotosApp } from "@/windows/Photos/PhotosApp";
 import { ProjectsApp } from "@/windows/Projects/ProjectsApp";
-import { ExperienceApp } from "@/windows/Experience/ExperienceApp";
+import { FAQApp } from "@/windows/FAQ/FAQApp";
 import { ContactApp } from "@/windows/Contact/ContactApp";
-import { ResumeApp } from "@/windows/Resume/ResumeApp";
 
 export const desktopApps: DesktopAppDefinition[] = [
   {
@@ -14,6 +14,13 @@ export const desktopApps: DesktopAppDefinition[] = [
     component: AboutApp,
   },
   {
+    id: "photos",
+    title: "photos",
+    icon: "/icons/photos.svg",
+    defaultSize: { width: 640, height: 460 },
+    component: PhotosApp,
+  },
+  {
     id: "projects",
     title: "work",
     icon: "/icons/work.svg",
@@ -21,11 +28,11 @@ export const desktopApps: DesktopAppDefinition[] = [
     component: ProjectsApp,
   },
   {
-    id: "experience",
-    title: "experience",
-    icon: "/icons/experience.svg",
-    defaultSize: { width: 600, height: 440 },
-    component: ExperienceApp,
+    id: "faq",
+    title: "faq",
+    icon: "/icons/faq.svg",
+    defaultSize: { width: 560, height: 440 },
+    component: FAQApp,
   },
   {
     id: "contact",
@@ -33,13 +40,6 @@ export const desktopApps: DesktopAppDefinition[] = [
     icon: "/icons/contact.svg",
     defaultSize: { width: 480, height: 360 },
     component: ContactApp,
-  },
-  {
-    id: "resume",
-    title: "resume",
-    icon: "/icons/resume.svg",
-    defaultSize: { width: 560, height: 480 },
-    component: ResumeApp,
   },
 ];
 

@@ -19,7 +19,7 @@ Open [http://localhost:3000](http://localhost:3000).
 - `components/mobile/` — the stacked-card layout shown below the 768px breakpoint.
 - `components/shared/` — pieces used by both modes (theme/sound toggles, background, footer, mascot).
 - `components/ui/` — small generic primitives (button, icon, tooltip, modal).
-- `windows/` — content "apps" (About, Projects, Experience, Contact, Resume), each with its own data file. Named `windows/` rather than `apps/` to avoid reading like the Next.js `app/` router directory.
+- `windows/` — content "apps" (About, Photos, Projects, FAQ, Contact), each with its own data file. Named `windows/` rather than `apps/` to avoid reading like the Next.js `app/` router directory.
 - `config/` — desktop app registry, theme tokens, breakpoints, site info.
 - `context/` + `hooks/` — React Context providers (theme, sound, window manager) and the hooks that consume them.
 - `lib/` — window positioning math, Framer Motion variants, shared constants.

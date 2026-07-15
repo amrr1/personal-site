@@ -3,10 +3,10 @@ import type { WindowSize } from "./window";
 
 export type DesktopAppId =
   | "about"
+  | "photos"
   | "projects"
-  | "experience"
-  | "contact"
-  | "resume";
+  | "faq"
+  | "contact";
 
 export interface DesktopAppDefinition {
   id: DesktopAppId;
