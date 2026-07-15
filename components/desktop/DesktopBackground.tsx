@@ -11,8 +11,8 @@ export function DesktopBackground() {
         className="absolute left-[8%] top-[10%]"
       />
       <AnimatedMascot
-        src="/mascots/frog.svg"
-        alt="Frog mascot"
+        src="/mascots/cat headphone placeholder.png"
+        alt="Cat with headphones mascot"
         className="absolute bottom-[4%] right-[6%]"
       />
     </>
