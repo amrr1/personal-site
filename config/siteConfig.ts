@@ -1,11 +1,10 @@
 export const siteConfig = {
-  name: "Your Name",
+  name: "Amr Ahmed",
   role: "Software Engineer",
   tagline: "software engineer & builder",
   email: "hello@example.com",
   socials: [
-    { id: "twitter", label: "Twitter", href: "https://twitter.com/" },
-    { id: "github", label: "GitHub", href: "https://github.com/" },
-    { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com/" },
+    { id: "github", label: "GitHub", href: "https://github.com/amrr1?tab=repositories" },
+    { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/amr-ahmed101/" },
   ],
 } as const;

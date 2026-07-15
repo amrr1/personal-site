@@ -5,7 +5,7 @@ export interface AboutData {
 }
 
 export const aboutData: AboutData = {
-  name: "Your Name",
+  name: "Amr Ahmed",
   headline: "software engineer",
   bio: [
     "Placeholder bio paragraph. Replace with real content in the next phase.",
