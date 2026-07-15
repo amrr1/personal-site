@@ -27,11 +27,11 @@ export function Window({ windowInstance }: WindowProps) {
 
   return (
     <motion.div
-      ref={setNodeRef}
       variants={windowVariants}
       initial="initial"
       animate="animate"
       exit="exit"
+      transition={{ type: "spring", stiffness: 340, damping: 28, mass: 0.9 }}
       onPointerDown={bringToFront}
       style={{
         position: "absolute",
@@ -39,22 +39,34 @@ export function Window({ windowInstance }: WindowProps) {
         top: windowInstance.position.y,
         width: windowInstance.size.width,
         zIndex: windowInstance.zIndex,
-        transform: transform
-          ? `translate3d(${transform.x}px, ${transform.y}px, 0)`
-          : undefined,
       }}
-      className={`overflow-hidden rounded-lg border border-neutral-300 bg-white shadow-xl ${
-        isDragging ? "cursor-grabbing" : ""
-      }`}
     >
-      <WindowHeader
-        title={app.title}
-        onClose={() => closeWindow(windowInstance.id)}
-        dragHandleAttributes={attributes}
-        dragHandleListeners={listeners}
-      />
-      <div className="max-h-[70vh] overflow-y-auto">
-        <AppComponent />
+      {/*
+        Drag transform lives on this inner node, not the motion.div above.
+        Framer Motion drives the outer node's own `transform` (opacity/scale
+        variants) every frame; sharing that property with dnd-kit's live
+        drag offset would make the two fight and produce a stuttery drag.
+      */}
+      <div
+        ref={setNodeRef}
+        style={{
+          transform: transform
+            ? `translate3d(${transform.x}px, ${transform.y}px, 0)`
+            : undefined,
+        }}
+        className={`overflow-hidden rounded-lg border border-neutral-300 bg-white shadow-xl ${
+          isDragging ? "cursor-grabbing" : ""
+        }`}
+      >
+        <WindowHeader
+          title={app.title}
+          onClose={() => closeWindow(windowInstance.id)}
+          dragHandleAttributes={attributes}
+          dragHandleListeners={listeners}
+        />
+        <div className="max-h-[70vh] overflow-y-auto">
+          <AppComponent />
+        </div>
       </div>
     </motion.div>
   );

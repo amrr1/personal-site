@@ -21,8 +21,8 @@ export function Desktop() {
         <DesktopIcons />
       </main>
       <WindowManager />
-      <Taskbar />
-      <div className="mt-auto">
+      <div className="mt-auto flex flex-col items-center gap-2 pb-2">
+        <Taskbar />
         <Footer />
       </div>
     </div>

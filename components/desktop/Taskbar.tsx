@@ -9,7 +9,7 @@ export function Taskbar() {
   if (windows.length === 0) return null;
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 gap-2 rounded-full bg-white/80 px-3 py-2 shadow-md backdrop-blur">
+    <div className="relative z-40 mx-auto flex w-fit gap-2 rounded-full bg-white/80 px-3 py-2 shadow-md backdrop-blur">
       {windows.map((windowInstance) => {
         const app = getDesktopApp(windowInstance.appId);
         if (!app) return null;
