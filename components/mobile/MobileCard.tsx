@@ -1,21 +1,24 @@
 import type { ReactNode } from "react";
 
 interface MobileCardProps {
-  id: string;
   title: string;
+  onBack: () => void;
   children: ReactNode;
 }
 
-export function MobileCard({ id, title, children }: MobileCardProps) {
+export function MobileCard({ title, onBack, children }: MobileCardProps) {
   return (
-    <section
-      id={id}
-      className="mx-4 mb-4 rounded-lg border border-neutral-200 bg-white shadow-sm"
-    >
-      <div className="rounded-t-lg bg-neutral-800 px-3 py-2 text-sm text-white">
-        {title}
-      </div>
-      <div className="p-4">{children}</div>
-    </section>
+    <div className="flex flex-1 flex-col">
+      <button
+        type="button"
+        onClick={onBack}
+        aria-label={`Back to home from ${title}`}
+        className="flex items-center justify-between bg-neutral-800 px-4 py-3 text-left text-sm font-bold text-white"
+      >
+        <span>{title}</span>
+        <span aria-hidden>⌄</span>
+      </button>
+      <div className="flex-1 overflow-y-auto">{children}</div>
+    </div>
   );
 }
